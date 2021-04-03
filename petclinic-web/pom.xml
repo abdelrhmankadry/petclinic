@@ -52,6 +52,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.kadry</groupId>
+            <artifactId>petclinic-data</artifactId>
+            <version>0.0.2</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
   <scm>

@@ -1,12 +1,13 @@
 package com.kadry.petclinic.services.map;
 
 import com.kadry.petclinic.model.Owner;
-import com.kadry.petclinic.services.CrudService;
+
+import com.kadry.petclinic.services.OwnerService;
 
 import java.util.Set;
 
 public class OwnerServiceMap extends AbstractMapService<Owner, Long>
-    implements CrudService<Owner, Long>
+    implements OwnerService
 {
     @Override
     public Set<Owner> findAll() {
@@ -31,5 +32,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long>
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

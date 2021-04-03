@@ -1,13 +1,13 @@
 package com.kadry.petclinic.services.map;
 
-import com.kadry.petclinic.model.Owner;
 import com.kadry.petclinic.model.Vet;
-import com.kadry.petclinic.services.CrudService;
+
+import com.kadry.petclinic.services.VetService;
 
 import java.util.Set;
 
 public class VetServiceMap extends AbstractMapService<Vet, Long>
-        implements CrudService<Vet, Long> {
+        implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
