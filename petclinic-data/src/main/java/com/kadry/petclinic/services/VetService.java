@@ -5,11 +5,6 @@ import com.kadry.petclinic.model.Vet;
 
 import java.util.Set;
 
-interface VetService {
+interface VetService extends CrudService<Vet, Long>{
 
-    Vet findById(Long id);
-
-    Vet save(Vet owner);
-
-    Set<Vet> findAll();
 }
