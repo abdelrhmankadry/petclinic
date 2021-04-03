@@ -3,9 +3,11 @@ package com.kadry.petclinic.services.map;
 import com.kadry.petclinic.model.Pet;
 
 import com.kadry.petclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long>
         implements PetService {
     @Override
