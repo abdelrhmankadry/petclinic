@@ -32,16 +32,21 @@
                 </executions>
                 <configuration>
                     <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
-                    <cssDestinationFolder>D:\Abdelrhman\Programming\Java springboot\petclinic\petclinic-web\src\main\resources\static/resources/css</cssDestinationFolder>
-                    <wroFile>D:\Abdelrhman\Programming\Java springboot\petclinic\petclinic-web/src/main\resources\wro/wro.xml</wroFile>
-                    <extraConfigFile>D:\Abdelrhman\Programming\Java springboot\petclinic\petclinic-web/src/main/resources/wro/wro.properties</extraConfigFile>
-                    <contextFolder>D:\Abdelrhman\Programming\Java springboot\petclinic\petclinic-web/src/main/resources/less</contextFolder>
+                    <cssDestinationFolder>${project.build.directory}/classes/static/resources/css</cssDestinationFolder>
+                    <wroFile>${basedir}/src/main/wro/wro.xml</wroFile>
+                    <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
+                    <contextFolder>${basedir}/src/main/less</contextFolder>
                 </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.webjars</groupId>
                         <artifactId>bootstrap</artifactId>
-                        <version>4.6.0-1</version>
+                        <version>3.3.7-1</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mockito</groupId>
+                        <artifactId>mockito-core</artifactId>
+                        <version>${mockito.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -99,13 +104,12 @@
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
-            <artifactId>webjars-locator</artifactId>
-            <version>0.40</version>
+            <artifactId>webjars-locator-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
-            <version>4.6.0-1</version>
+            <version>3.3.7-1</version>
         </dependency>
 
     </dependencies>
