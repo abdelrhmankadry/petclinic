@@ -3,11 +3,15 @@ package com.kadry.petclinic.services.springdatajpa;
 import com.kadry.petclinic.model.Pet;
 import com.kadry.petclinic.repositories.PetRepository;
 import com.kadry.petclinic.services.PetService;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import javax.print.attribute.HashAttributeSet;
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
+@Profile("springdatajpa")
 public class PetSDjpaService implements PetService {
 
     private final PetRepository petRepository;
