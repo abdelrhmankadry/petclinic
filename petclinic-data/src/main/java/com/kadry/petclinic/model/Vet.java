@@ -9,7 +9,7 @@ import java.util.Set;
 public class Vet extends Person{
 
     @ManyToMany(fetch =  FetchType.EAGER)
-    @JoinTable(name="vet_speed", joinColumns=@JoinColumn(name="vet_id"),
+    @JoinTable(name="vet_specialty", joinColumns=@JoinColumn(name="vet_id"),
         inverseJoinColumns=@JoinColumn(name="speciality_id"))
     private Set<Specialty> specialities = new HashSet<Specialty>();
 

@@ -6,11 +6,13 @@ import com.kadry.petclinic.model.Pet;
 import com.kadry.petclinic.services.OwnerService;
 import com.kadry.petclinic.services.PetService;
 import com.kadry.petclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long>
     implements OwnerService
 {
