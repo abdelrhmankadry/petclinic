@@ -20,7 +20,8 @@ public abstract class AbstractMapService <T extends BaseEntity, ID extends Long>
         }else{
             throw new RuntimeException ("object cannot be null");
         }
-        return map.put(object.getId(), object);
+        map.put(object.getId(), object);
+        return map.get(object.getId());
     }
 
     void deleteById(ID id) { map.remove(id);}

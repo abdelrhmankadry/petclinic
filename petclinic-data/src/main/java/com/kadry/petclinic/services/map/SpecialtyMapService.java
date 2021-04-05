@@ -1,25 +1,19 @@
 package com.kadry.petclinic.services.map;
 
-import com.kadry.petclinic.model.Speciality;
-import com.kadry.petclinic.services.SpecialtiesService;
+import com.kadry.petclinic.model.Specialty;
+import com.kadry.petclinic.services.SpecialtyService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialtyMapService extends AbstractMapService<Speciality, Long>
-            implements SpecialtiesService {
+public class SpecialtyMapService extends AbstractMapService<Specialty, Long>
+            implements SpecialtyService {
 
 
     @Override
-    public Set<Speciality> findAll() {
+    public Set<Specialty> findAll() {
         return super.findAll();
-    }
-
-
-    @Override
-    public void delete(Speciality object) {
-        super.delete(object);
     }
 
     @Override
@@ -28,12 +22,18 @@ public class SpecialtyMapService extends AbstractMapService<Speciality, Long>
     }
 
     @Override
-    public Speciality save(Speciality object) {
+    public void delete(Specialty object) {
+        super.delete(object);
+    }
+
+    @Override
+    public Specialty save(Specialty object) {
+
         return super.save(object);
     }
 
     @Override
-    public Speciality findById(Long id) {
+    public Specialty findById(Long id) {
         return super.findById(id);
     }
 }
