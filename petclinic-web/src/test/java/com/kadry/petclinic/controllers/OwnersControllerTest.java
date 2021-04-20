@@ -109,4 +109,5 @@ class OwnersControllerTest {
                 .andExpect(view().name("owners/ownerDetails"))
                 .andExpect(model().attribute("owner", hasProperty("id", is(1l))));
     }
+
 }
