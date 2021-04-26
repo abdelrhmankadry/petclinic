@@ -2,6 +2,7 @@ package com.kadry.petclinic.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 
 @Entity
@@ -48,5 +49,23 @@ public class Owner extends Person{
 
     public void setPets(Set<Pet> pets) {
         this.pets = pets;
+    }
+
+    public Pet getPet(String name){
+        return getPet(name, false);
+    }
+    public Pet getPet(String name, boolean ignoreNew){
+        name = name.toLowerCase();
+        for (Pet pet :
+                pets) {
+            if (!ignoreNew && pet.isNew()) {
+                String compName = pet.getName();
+                compName = compName.toLowerCase();
+                if(compName.equals(name)){
+                    return pet;
+                }
+            }
+        }
+        return null;
     }
 }
