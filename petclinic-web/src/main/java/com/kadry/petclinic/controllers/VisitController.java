@@ -30,6 +30,7 @@ public class VisitController {
     @InitBinder
     public void setAllowedFields(WebDataBinder webDataBinder){
         webDataBinder.setDisallowedFields("id");
+        //not necessary
         webDataBinder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
             @Override
             public void setAsText(String text) throws IllegalArgumentException{
