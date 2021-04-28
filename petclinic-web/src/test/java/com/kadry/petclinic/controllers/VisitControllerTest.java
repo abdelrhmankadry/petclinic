@@ -10,6 +10,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -51,20 +52,15 @@ class VisitControllerTest {
 
     @Test
     void processNewVisitFormTest() throws Exception {
-        mockMvc.perform(post("/owners/1/pets/1/visits/new"))
+        mockMvc.perform(post("/owners/1/pets/1/visits/new")
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                        .param("date","2018-11-11")
+                        .param("description", "yet another visit"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(model().attributeExists("visit"))
                 .andExpect(view().name("redirect:/owners/{ownerId}"));
     }
 
-    @Test
-    void initUpdateVisitFormTest() throws Exception {
-        mockVisitServiceFindByID();
-        mockMvc.perform(get("/owners/1/pets/1/visits/1/update"))
-                .andExpect(status().isOk())
-                .andExpect(model().attributeExists("visit"))
-                .andExpect(view().name(CREATE_OR_UPDATE_VISIT_FORM));
-    }
 
 
     private void mockVisitServiceFindByID() {
