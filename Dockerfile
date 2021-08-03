@@ -14,6 +14,8 @@ COPY mvnw pom.xml ./
 
 RUN mvn dependency:go-offline
 
+RUN mvn test
+
 COPY src ./src
 
 #RUN mvn package
