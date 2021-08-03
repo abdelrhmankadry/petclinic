@@ -40,6 +40,5 @@ jobs:
     - name: Run tests
       run: docker run -it --rm --name springboot-test ${{ secrets.DOCKER_HUB_USERNAME }}/petclinic:latest ./mvnw test
 
-
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
