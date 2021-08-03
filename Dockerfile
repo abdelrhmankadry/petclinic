@@ -9,7 +9,7 @@ COPY petclinic-web ./petclinic-web
 COPY mvnw pom.xml ./
 
 
-RUN ./mvnw dependency
+RUN mvn -o -e -B package
 
 COPY src ./src
 
