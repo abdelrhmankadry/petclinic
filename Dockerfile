@@ -9,7 +9,7 @@ COPY petclinic-web ./petclinic-web
 COPY mvnw pom.xml ./
 
 
-RUN ./mvnw dependency:go-offline
+RUN mvnw dependency:go-offline
 
 COPY src ./src
 
