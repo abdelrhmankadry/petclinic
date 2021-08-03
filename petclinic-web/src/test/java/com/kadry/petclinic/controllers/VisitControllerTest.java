@@ -71,5 +71,6 @@ class VisitControllerTest {
         visit.setPet(pet);
         when(visitService.findById(anyLong())).thenReturn(visit);
         //nothing
+
     }
 }
