@@ -158,7 +158,7 @@ class OwnersControllerTest {
         mockMvc.perform(post("/owners/1/edit"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/1"))
-                .andExpect(model().attributeExists("owner"));
+                .andExpect(model().attributeExists("owner1"));
 
         //then
         verify(ownerService).save(ArgumentMatchers.any());
