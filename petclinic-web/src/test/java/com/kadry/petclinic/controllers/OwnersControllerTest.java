@@ -168,5 +168,6 @@ class OwnersControllerTest {
         Owner owner = new Owner();
         owner.setId(1L);
         when(ownerService.save(any())).thenReturn(owner);
+        // nothing
     }
 }
