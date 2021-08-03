@@ -16,6 +16,6 @@ COPY mvnw pom.xml ./
 
 COPY src ./src
 
-RUN ./mvnw package
+RUN mvn package
 CMD ["java", "-jar", ".\petclinic-web\target\petclinic-web-0.0.2.jar"]
 #CMD ["./mvnw", "spring-boot:run"]
