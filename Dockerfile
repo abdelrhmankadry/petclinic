@@ -12,10 +12,10 @@ COPY petclinic-web ./petclinic-web
 COPY mvnw pom.xml ./
 
 
-#RUN ./mvnw dependency:go-offline
+RUN mvn dependency:go-offline
 
 COPY src ./src
 
-RUN mvn package
-CMD ["java", "-jar", ".\petclinic-web\target\petclinic-web-0.0.2.jar"]
-#CMD ["./mvnw", "spring-boot:run"]
+#RUN mvn package
+#CMD ["java", "-jar", ".\petclinic-web\target\petclinic-web-0.0.2.jar"]
+CMD ["mvn", "spring-boot:run"]
