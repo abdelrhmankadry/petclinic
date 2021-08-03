@@ -36,6 +36,7 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/petclinic:latest
+
     - name: Run tests
       run: docker run -it --rm --name springboot-test ${{ secrets.DOCKER_HUB_USERNAME }}/petclinic:latest ./mvnw test
 
