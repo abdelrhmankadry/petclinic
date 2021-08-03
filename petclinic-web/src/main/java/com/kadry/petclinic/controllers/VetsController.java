@@ -23,7 +23,6 @@ public class VetsController {
     public String index(Model model){
 
         model.addAttribute("vets", vetService.findAll());
-
         return "vets/index";
     }
 
